@@ -1,12 +1,7 @@
 import { View, StyleSheet } from 'react-native';
-import { ReactNativeView } from '@material3/react-native';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <ReactNativeView color="#32a852" style={styles.box} />
-    </View>
-  );
+  return <View style={styles.container} />;
 }
 
 const styles = StyleSheet.create({

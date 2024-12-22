@@ -1,2 +1,1 @@
-export { default as ReactNativeView } from './ReactNativeViewNativeComponent';
-export * from './ReactNativeViewNativeComponent';
+export { default as Divider } from './divider';
