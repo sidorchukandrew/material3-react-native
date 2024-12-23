@@ -1,5 +1,7 @@
-import NativeDividerComponent from '../specs/NativeDividerComponent';
+import NativeDividerComponent, {
+  type NativeProps,
+} from '../specs/NativeDividerComponent';
 
-export default function Divider({ style }) {
-  return <NativeDividerComponent color="#ffffff" style={style} />;
+export default function Divider(props: NativeProps) {
+  return <NativeDividerComponent {...props} />;
 }
