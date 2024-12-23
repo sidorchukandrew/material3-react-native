@@ -3,10 +3,12 @@ package com.material3.reactnative
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
+import com.facebook.react.module.model.ReactModuleInfo
+import com.facebook.react.module.model.ReactModuleInfoProvider
 import com.facebook.react.uimanager.ViewManager
 import java.util.ArrayList
 
-class Material3Package : ReactPackage {
+class Material3Package : BaseReactPackage() {
   override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
     val viewManagers: MutableList<ViewManager<*, *>> = ArrayList()
     viewManagers.add(DividerManager(reactContext))
@@ -14,7 +16,21 @@ class Material3Package : ReactPackage {
     return viewManagers
   }
 
-  override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-    return emptyList()
+  override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
+    return when (name) {
+      DatePickerModule.NAME -> DatePickerModule(reactContext)
+      else -> null
+    }
+  }
+
+  override fun getReactModuleInfoProvider() = ReactModuleInfoProvider {
+    mapOf(
+      DatePickerModule.NAME to ReactModuleInfo(
+        DatePickerModule.NAME, DatePickerModule.NAME, false, // canOverrideExistingModule
+        false, // needsEagerInit
+        false, // isCxxModule
+        true // isTurboModule
+      )
+    )
   }
 }
