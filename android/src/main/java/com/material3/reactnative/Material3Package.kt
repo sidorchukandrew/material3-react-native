@@ -20,6 +20,7 @@ class Material3Package : BaseReactPackage() {
     return when (name) {
       DatePickerModule.NAME -> DatePickerModule(reactContext)
       TimePickerModule.NAME -> TimePickerModule(reactContext)
+      SnackbarModule.NAME -> SnackbarModule(reactContext)
       else -> null
     }
   }
@@ -34,6 +35,12 @@ class Material3Package : BaseReactPackage() {
       ),
       TimePickerModule.NAME to ReactModuleInfo(
         TimePickerModule.NAME, TimePickerModule.NAME, false, // canOverrideExistingModule
+        false, // needsEagerInit
+        false, // isCxxModule
+        true // isTurboModule
+      ),
+      SnackbarModule.NAME to ReactModuleInfo(
+        SnackbarModule.NAME, SnackbarModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
