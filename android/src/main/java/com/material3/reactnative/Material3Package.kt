@@ -19,6 +19,7 @@ class Material3Package : BaseReactPackage() {
   override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
     return when (name) {
       DatePickerModule.NAME -> DatePickerModule(reactContext)
+      TimePickerModule.NAME -> TimePickerModule(reactContext)
       else -> null
     }
   }
@@ -27,6 +28,12 @@ class Material3Package : BaseReactPackage() {
     mapOf(
       DatePickerModule.NAME to ReactModuleInfo(
         DatePickerModule.NAME, DatePickerModule.NAME, false, // canOverrideExistingModule
+        false, // needsEagerInit
+        false, // isCxxModule
+        true // isTurboModule
+      ),
+      TimePickerModule.NAME to ReactModuleInfo(
+        TimePickerModule.NAME, TimePickerModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
