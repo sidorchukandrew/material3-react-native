@@ -15,3 +15,6 @@ export type { AlertDialogProps } from './alert_dialog';
 
 export { OptionsDialog } from './options_dialog';
 export type { OptionsDialogProps } from './options_dialog';
+
+export { RangePicker } from './rangepicker';
+export type { RangePickerProps } from './rangepicker';
