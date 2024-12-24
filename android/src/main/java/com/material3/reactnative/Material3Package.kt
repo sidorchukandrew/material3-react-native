@@ -21,6 +21,7 @@ class Material3Package : BaseReactPackage() {
       DatePickerModule.NAME -> DatePickerModule(reactContext)
       TimePickerModule.NAME -> TimePickerModule(reactContext)
       SnackbarModule.NAME -> SnackbarModule(reactContext)
+      AlertDialogModule.NAME -> AlertDialogModule(reactContext)
       else -> null
     }
   }
@@ -41,6 +42,12 @@ class Material3Package : BaseReactPackage() {
       ),
       SnackbarModule.NAME to ReactModuleInfo(
         SnackbarModule.NAME, SnackbarModule.NAME, false, // canOverrideExistingModule
+        false, // needsEagerInit
+        false, // isCxxModule
+        true // isTurboModule
+      ),
+      AlertDialogModule.NAME to ReactModuleInfo(
+        AlertDialogModule.NAME, AlertDialogModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule

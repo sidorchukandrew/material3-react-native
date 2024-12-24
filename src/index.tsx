@@ -9,3 +9,6 @@ export type { TimePickerProps } from './timepicker';
 
 export { Snackbar } from './snackbar';
 export type { SnackbarProps } from './snackbar';
+
+export { AlertDialog } from './alert_dialog';
+export type { AlertDialogProps } from './alert_dialog';
