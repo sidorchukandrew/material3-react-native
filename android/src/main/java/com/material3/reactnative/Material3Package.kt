@@ -1,6 +1,6 @@
 package com.material3.reactnative
 
-import com.facebook.react.ReactPackage
+import com.facebook.react.BaseReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.model.ReactModuleInfo
@@ -11,7 +11,7 @@ import java.util.ArrayList
 class Material3Package : BaseReactPackage() {
   override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
     val viewManagers: MutableList<ViewManager<*, *>> = ArrayList()
-    viewManagers.add(DividerManager(reactContext))
+//    viewManagers.add(DividerManager(reactContext))
 
     return viewManagers
   }
@@ -23,6 +23,7 @@ class Material3Package : BaseReactPackage() {
       SnackbarModule.NAME -> SnackbarModule(reactContext)
       AlertDialogModule.NAME -> AlertDialogModule(reactContext)
       OptionsDialogModule.NAME -> OptionsDialogModule(reactContext)
+      RangePickerModule.NAME -> RangePickerModule(reactContext)
       else -> null
     }
   }
@@ -55,6 +56,12 @@ class Material3Package : BaseReactPackage() {
       ),
       OptionsDialogModule.NAME to ReactModuleInfo(
         OptionsDialogModule.NAME, OptionsDialogModule.NAME, false, // canOverrideExistingModule
+        false, // needsEagerInit
+        false, // isCxxModule
+        true // isTurboModule
+      ),
+      RangePickerModule.NAME to ReactModuleInfo(
+        RangePickerModule.NAME, RangePickerModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
