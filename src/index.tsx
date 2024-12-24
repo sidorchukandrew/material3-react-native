@@ -12,3 +12,6 @@ export type { SnackbarProps } from './snackbar';
 
 export { AlertDialog } from './alert_dialog';
 export type { AlertDialogProps } from './alert_dialog';
+
+export { OptionsDialog } from './options_dialog';
+export type { OptionsDialogProps } from './options_dialog';

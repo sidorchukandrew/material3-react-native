@@ -22,6 +22,7 @@ class Material3Package : BaseReactPackage() {
       TimePickerModule.NAME -> TimePickerModule(reactContext)
       SnackbarModule.NAME -> SnackbarModule(reactContext)
       AlertDialogModule.NAME -> AlertDialogModule(reactContext)
+      OptionsDialogModule.NAME -> OptionsDialogModule(reactContext)
       else -> null
     }
   }
@@ -48,6 +49,12 @@ class Material3Package : BaseReactPackage() {
       ),
       AlertDialogModule.NAME to ReactModuleInfo(
         AlertDialogModule.NAME, AlertDialogModule.NAME, false, // canOverrideExistingModule
+        false, // needsEagerInit
+        false, // isCxxModule
+        true // isTurboModule
+      ),
+      OptionsDialogModule.NAME to ReactModuleInfo(
+        OptionsDialogModule.NAME, OptionsDialogModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
