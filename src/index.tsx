@@ -18,3 +18,6 @@ export type { OptionsDialogProps } from './options_dialog';
 
 export { RangePicker } from './rangepicker';
 export type { RangePickerProps } from './rangepicker';
+
+export { Menu } from './menu';
+export type { MenuProps } from './menu';
