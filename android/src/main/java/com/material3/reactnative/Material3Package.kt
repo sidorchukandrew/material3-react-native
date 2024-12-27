@@ -24,6 +24,7 @@ class Material3Package : BaseReactPackage() {
       AlertDialogModule.NAME -> AlertDialogModule(reactContext)
       OptionsDialogModule.NAME -> OptionsDialogModule(reactContext)
       RangePickerModule.NAME -> RangePickerModule(reactContext)
+      MenuModule.NAME -> MenuModule(reactContext)
       else -> null
     }
   }
@@ -35,33 +36,33 @@ class Material3Package : BaseReactPackage() {
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
-      ),
-      TimePickerModule.NAME to ReactModuleInfo(
+      ), TimePickerModule.NAME to ReactModuleInfo(
         TimePickerModule.NAME, TimePickerModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
-      ),
-      SnackbarModule.NAME to ReactModuleInfo(
+      ), SnackbarModule.NAME to ReactModuleInfo(
         SnackbarModule.NAME, SnackbarModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
-      ),
-      AlertDialogModule.NAME to ReactModuleInfo(
+      ), AlertDialogModule.NAME to ReactModuleInfo(
         AlertDialogModule.NAME, AlertDialogModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
-      ),
-      OptionsDialogModule.NAME to ReactModuleInfo(
+      ), OptionsDialogModule.NAME to ReactModuleInfo(
         OptionsDialogModule.NAME, OptionsDialogModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
-      ),
-      RangePickerModule.NAME to ReactModuleInfo(
+      ), RangePickerModule.NAME to ReactModuleInfo(
         RangePickerModule.NAME, RangePickerModule.NAME, false, // canOverrideExistingModule
+        false, // needsEagerInit
+        false, // isCxxModule
+        true // isTurboModule
+      ), MenuModule.NAME to ReactModuleInfo(
+        MenuModule.NAME, MenuModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule
