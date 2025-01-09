@@ -21,3 +21,6 @@ export type { RangePickerProps } from './rangepicker';
 
 export { Menu } from './menu';
 export type { MenuProps } from './menu';
+
+export { Colors } from './colors';
+export type { MaterialColors, MaterialThemes } from './colors';

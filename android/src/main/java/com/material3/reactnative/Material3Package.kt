@@ -25,6 +25,7 @@ class Material3Package : BaseReactPackage() {
       OptionsDialogModule.NAME -> OptionsDialogModule(reactContext)
       RangePickerModule.NAME -> RangePickerModule(reactContext)
       MenuModule.NAME -> MenuModule(reactContext)
+      ColorsModule.NAME -> ColorsModule(reactContext)
       else -> null
     }
   }
@@ -63,6 +64,11 @@ class Material3Package : BaseReactPackage() {
         true // isTurboModule
       ), MenuModule.NAME to ReactModuleInfo(
         MenuModule.NAME, MenuModule.NAME, false, // canOverrideExistingModule
+        false, // needsEagerInit
+        false, // isCxxModule
+        true // isTurboModule
+      ), ColorsModule.NAME to ReactModuleInfo(
+        ColorsModule.NAME, ColorsModule.NAME, false, // canOverrideExistingModule
         false, // needsEagerInit
         false, // isCxxModule
         true // isTurboModule

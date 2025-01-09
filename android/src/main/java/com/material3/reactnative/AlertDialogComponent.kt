@@ -2,7 +2,6 @@ package com.material3.reactnative
 
 import android.app.Dialog
 import android.content.DialogInterface
-import android.content.res.Resources.Theme
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
@@ -43,6 +42,7 @@ class AlertDialogComponent(
     setMessage()
     setActions()
     setCancelable()
+    setIcon()
   }
 
   private fun setActions() {
@@ -103,6 +103,16 @@ class AlertDialogComponent(
     return when (headerAlignment) {
       "center" -> com.google.android.material.R.style.ThemeOverlay_Material3_MaterialAlertDialog_Centered
       else -> com.google.android.material.R.style.ThemeOverlay_Material3_MaterialAlertDialog
+    }
+  }
+
+  private fun setIcon() {
+    val icon = props.getString("icon")
+
+    if (icon.isNullOrEmpty()) {
+      alertDialog!!.setIcon(null)
+    } else {
+      alertDialog!!.setIcon(IconHelper(alertDialog!!.context, icon).resolve())
     }
   }
 

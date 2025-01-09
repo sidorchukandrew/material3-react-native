@@ -1,2 +1,2 @@
 export { default } from './divider';
-export type { NativeProps as DividerProps } from '../specs/NativeDividerComponent';
+export type { NativeProps as DividerProps } from '../specs/DividerNativeComponent';
