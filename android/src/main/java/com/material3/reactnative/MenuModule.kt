@@ -22,6 +22,7 @@ class MenuModule(reactContext: ReactApplicationContext) : NativeMenuSpec(reactCo
       reactContext = reactApplicationContext,
       items = items,
       anchorView = view,
+      currentActivity = currentActivity!!,
       onSelect = onSelect
     )
 

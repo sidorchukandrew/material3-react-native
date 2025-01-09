@@ -45,6 +45,7 @@ class OptionsDialogComponent(
     setOptions()
     setActions()
     setCancelable()
+    setIcon()
   }
 
   private fun setActions() {
@@ -174,5 +175,15 @@ class OptionsDialogComponent(
     result.putArray("selections", selections)
 
     return result
+  }
+
+  private fun setIcon() {
+    val icon = props.getString("icon")
+
+    if (icon.isNullOrEmpty()) {
+      alertDialog!!.setIcon(null)
+    } else {
+      alertDialog!!.setIcon(IconHelper(alertDialog!!.context, icon).resolve())
+    }
   }
 }

@@ -9,6 +9,7 @@ export interface ShowProps {
   neutralButtonText?: string;
   cancelable?: boolean;
   headerAlignment?: string;
+  icon?: string;
 }
 
 export interface Spec extends TurboModule {

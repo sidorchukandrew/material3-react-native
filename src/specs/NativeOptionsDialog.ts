@@ -11,6 +11,7 @@ export interface ShowProps {
   pickerType?: string;
   options: string[];
   selected?: number[];
+  icon?: string;
 }
 
 export interface Spec extends TurboModule {

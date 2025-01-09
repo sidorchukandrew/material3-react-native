@@ -36,7 +36,7 @@ export const RangePicker = {
 
 export type RangePickerProps = Omit<
   ShowProps,
-  'value' | 'inputMode' | 'maxDate' | 'minDate'
+  'value' | 'inputMode' | 'maxDate' | 'minDate' | 'start' | 'end'
 > & {
   onChange: (newValue: Range) => void;
   onCancel?: () => void;

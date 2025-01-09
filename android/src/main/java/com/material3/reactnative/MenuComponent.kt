@@ -1,5 +1,8 @@
 package com.material3.reactnative
 
+import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Build
 import android.view.Gravity
 import android.view.Menu
@@ -16,6 +19,7 @@ class MenuComponent(
   val props: ReadableMap,
   val reactContext: ReactApplicationContext,
   anchorView: View,
+  val currentActivity: Context,
   val items: ReadableArray,
   val onSelect: Callback?,
 ) {
@@ -82,6 +86,7 @@ class MenuComponent(
 
     menuItem.isCheckable = getIsCheckable(item)
     menuItem.isChecked = getIsChecked(item)
+    menuItem.icon = IconHelper(currentActivity, item["icon"].toString()).resolve()
   }
 
   private fun addSubMenu(item: HashMap<String, Any>, subMenu: SubMenu?, menu: Menu?) {
@@ -93,6 +98,8 @@ class MenuComponent(
     ) else subMenu!!.addSubMenu(
       groupId, Menu.NONE, Menu.NONE, title
     )
+
+    newSubMenu.setIcon(IconHelper(currentActivity, item["icon"].toString()).resolve())
 
     if (!item.containsKey("items")) return
 

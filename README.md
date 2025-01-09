@@ -2,32 +2,24 @@
 
 Android Material 3 components for React Native apps
 
-## Installation
+## Getting started
+
+From the root of the project:
+
+1. Install dependencies
 
 ```sh
-npm install @material3/react-native
+yarn
 ```
 
-## Usage
+2. Start the example app
 
-
-```js
-import { ReactNativeView } from "@material3/react-native";
-
-// ...
-
-<ReactNativeView color="tomato" />
+```sh
+yarn example start
 ```
 
+3. Run the example app on Android
 
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
-
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+```sh
+yarn example android
+```
