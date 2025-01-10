@@ -189,8 +189,10 @@ class ColorsModule(reactContext: ReactApplicationContext) : NativeColorsSpec(rea
 
   private fun getColorFromAttr(@AttrRes attr: Int): String {
     val typedArray = themedContext!!.theme.obtainStyledAttributes(intArrayOf(attr))
-    val color = typedArray.use {
-      it.getColor(0, 0)
+    val color = try {
+      typedArray.getColor(0, 0)
+    } finally {
+      typedArray.recycle()
     }
 
     val alpha = (color shr 24) and 0xFF
